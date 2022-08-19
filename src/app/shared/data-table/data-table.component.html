@@ -1,0 +1,27 @@
+<div class="row my-5 jumbotron">
+	<div class="col-md-12">
+		<h2 class="text-center datatable-header mt-5">Data Table</h2><hr>
+    <h4 class="text-muted text-center my-4">States with highest Coronavirus Cases</h4>
+		<table class="table table-striped text-center" *ngIf="coronadata">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">State</th>
+          <th scope="col">Cases</th>
+          <th scope="col">Deaths</th>
+          <th scope="col">Recovery</th>
+        </tr>
+      </thead>
+      <tbody  *ngFor="let corona of coronadata; index as i">
+        <tr>
+
+          <th *ngIf="i<10" scope="row">{{ i+1 }}</th>
+          <td *ngIf="i<10" >{{ corona.loc }}</td>
+          <td *ngIf="i<10" >{{corona.totalConfirmed}}</td>
+          <td *ngIf="i<10" >{{corona.deaths}}</td>
+          <td *ngIf="i<10" >{{corona.discharged}}</td>
+        </tr>
+      </tbody>
+    </table>
+	</div>
+</div>
